@@ -13,7 +13,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->decimal('valor_nota', 15, 2);
-            $table->string('numero_nota');
+            $table->integer('numero_nota');
             $table->date('data_emissao');
         });
     }
