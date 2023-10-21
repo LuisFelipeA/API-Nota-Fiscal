@@ -30,9 +30,19 @@ class ClienteController extends Controller
         return response()->json($clientes);
     }
 
-    public function ListarId() {
-        echo "Listar Cliente por id";
-    }
+    public function ListarPorId($id) {
+
+        $cliente = Cliente::find($id);
+
+        if (!$cliente) {
+            return response()->json([
+                'message' => 'Cliente não encontrado'
+            ], 404);
+        }
+
+        return response()->json($cliente, 200);
+
+        }
 
 
     //Update

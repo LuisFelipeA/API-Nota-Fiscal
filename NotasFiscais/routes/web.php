@@ -13,6 +13,7 @@ use App\Http\Controllers\ListarNotasController;
 Route::post('/InserirCliente', [ClienteController::class, 'Inserir'] )->withoutMiddleware(['web']);
 Route::put('/AlterarCliente/{id}', [ClienteController::class, 'Alterar'] )->withoutMiddleware(['web']);
 Route::get('/ListarClientes', [ClienteController::class, 'Listar'] );
+Route::get('/ListarClientes/{id}', [ClienteController::class, 'ListarPorId'] )->withoutMiddleware(['web']);
 Route::delete('/DeletarCliente/{id}', [ClienteController::class, 'Deletar'] )->withoutMiddleware(['web']);
 
 //Inserir venda
