@@ -20,4 +20,4 @@ Route::delete('/DeletarCliente/{id}', [ClienteController::class, 'Deletar'] )->w
 Route::get('/InserirVenda', [VendaController::class, 'Inserir'] );
 
 //ListarNotas
-Route::get('/ListarNotas', [ListarNotasController::class, 'Listar'] );
+Route::get('/ListarNotas/{id}', [ListarNotasController::class, 'Listar'] );
