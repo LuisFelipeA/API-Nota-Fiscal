@@ -10,7 +10,7 @@ use App\Http\Controllers\ListarNotasController;
 //Rotas Cliente
 Route::get('/inserirCliente', [ClienteController::class, 'Inserir'] );
 Route::get('/AlterarCliente', [ClienteController::class, 'Alterar'] );
-Route::get('/ListarCliente', [ClienteController::class, 'Listar'] );
+Route::get('/ListarClientes', [ClienteController::class, 'Listar'] );
 Route::get('/DeletarCliente', [ClienteController::class, 'Deletar'] );
 
 //Inserir venda

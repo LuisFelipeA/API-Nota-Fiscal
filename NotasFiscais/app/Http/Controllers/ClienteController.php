@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cliente;
 
 class ClienteController extends Controller
 {
@@ -15,7 +16,9 @@ class ClienteController extends Controller
     }
 
     public function Listar() {
-        echo "Listar Cliente";
+        $clientes = Cliente::all();
+
+        return response()->json($clientes);
     }
 
     public function ListarId() {
