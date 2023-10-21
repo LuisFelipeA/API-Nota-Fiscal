@@ -19,9 +19,3 @@ class VendaController extends Controller
     }
 
 }
-
-
-Illuminate\Database\Eloquent\MassAssignmentException: 
-
-Add [valor_nota] to fillable property to allow mass assignment on [App\Models\Venda]. 
-in file C:\Users\Felipe\OneDrive\Área de Trabalho\Projetos\Contabilivre\NotasFiscais\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php on line 524
