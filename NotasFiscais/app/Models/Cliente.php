@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     protected $fillable = ['nome', 'email'];
+
+    public function vendas() {
+        return $this->hasMany('App\Models\Venda');
+    }
+    
 }
+

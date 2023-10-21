@@ -18,12 +18,7 @@ class ClienteController extends Controller
             'Cliente' => $clientes
         ], 201);
 
-        // $cliente = new Cliente;
 
-        // $cliente->nome = $request->nome;
-        // $cliente->email = $request->email;
-
-        // $cliente->save();
     }
 
     public function Alterar() {

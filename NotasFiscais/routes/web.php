@@ -14,7 +14,7 @@ Route::get('/ListarClientes', [ClienteController::class, 'Listar'] );
 Route::get('/DeletarCliente', [ClienteController::class, 'Deletar'] );
 
 //Inserir venda
-Route::get('/inserirVenda', [VendaController::class, 'Inserir'] );
+Route::get('/InserirVenda', [VendaController::class, 'Inserir'] );
 
 //ListarNotas
 Route::get('/ListarNotas', [ListarNotasController::class, 'Listar'] );
