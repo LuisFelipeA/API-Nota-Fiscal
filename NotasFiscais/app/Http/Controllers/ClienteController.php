@@ -8,7 +8,7 @@ use App\Models\Venda;
 
 class ClienteController extends Controller
 {
-
+    //Create
     public function Inserir(Request $request)
     {
 
@@ -22,10 +22,8 @@ class ClienteController extends Controller
 
     }
 
-    public function Alterar() {
-        echo "Alterar Cliente";
-    }
 
+    //Read
     public function Listar() {
         $clientes = Cliente::all();
 
@@ -36,6 +34,34 @@ class ClienteController extends Controller
         echo "Listar Cliente por id";
     }
 
+
+    //Update
+    public function Alterar(Request $request, $id) {
+        $cliente = Cliente::find($id);
+    
+        if (!$cliente) {
+            return response()->json([
+                'message' => 'Cliente não encontrado'
+            ], 404);
+        }
+    
+        $request->validate([
+            'nome' => 'required',
+            'email' => 'required|email|unique:clientes,email,' . $id
+        ]);
+    
+        $cliente->nome = $request->input('nome');
+        $cliente->email = $request->input('email');
+        $cliente->save();
+    
+        return response()->json([
+            'message' => 'Cliente atualizado com sucesso',
+            'Cliente' => $cliente
+        ], 200);
+    }
+    
+
+    //Delete
     public function Deletar($id) {
         // Verifique se o cliente existe
         $cliente = Cliente::find($id);
@@ -46,14 +72,12 @@ class ClienteController extends Controller
             ], 404);
         }
     
-        // Verifique e exclua as vendas relacionadas manualmente
         $vendas = Venda::where('cliente_id', $id)->get();
     
         foreach ($vendas as $venda) {
             $venda->delete();
         }
     
-        // Agora, você pode excluir o cliente
         $cliente->delete();
     
         return response()->json([
@@ -61,20 +85,4 @@ class ClienteController extends Controller
         ], 201);
     }
 
-
-
-
-
-
-
-
-    // public function Deletar($id) {
-
-    //     Cliente::findOrFail($id)->delete();
-
-    //     return response()->json([
-    //         'message' => 'Cliente Deletado'
-    //     ], 201);
-
-    // }
 }

@@ -11,7 +11,7 @@ use App\Http\Controllers\ListarNotasController;
 
 //Rotas Cliente
 Route::post('/InserirCliente', [ClienteController::class, 'Inserir'] )->withoutMiddleware(['web']);
-Route::get('/AlterarCliente', [ClienteController::class, 'Alterar'] );
+Route::put('/AlterarCliente/{id}', [ClienteController::class, 'Alterar'] )->withoutMiddleware(['web']);
 Route::get('/ListarClientes', [ClienteController::class, 'Listar'] );
 Route::delete('/DeletarCliente/{id}', [ClienteController::class, 'Deletar'] )->withoutMiddleware(['web']);
 
