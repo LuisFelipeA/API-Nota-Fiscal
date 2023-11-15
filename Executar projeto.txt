@@ -11,6 +11,8 @@ Abra a pasta do repositório pelo terminal
 
 Instale as dependências do Composer:
     composer install
+        Caso de erro na hora de rodar o Composer install:
+            Abra o arquivo php.ini e remova o comentário ;extension=zipparaextension=zip
 
 Gere uma chave de aplicação:
     php artisan key:generate
