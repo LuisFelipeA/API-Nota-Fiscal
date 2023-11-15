@@ -14,9 +14,6 @@ Instale as dependências do Composer:
         Caso de erro na hora de rodar o Composer install:
             Abra o arquivo php.ini e remova o comentário ;extension=zipparaextension=zip
 
-Gere uma chave de aplicação:
-    php artisan key:generate
-
 Configure o arquivo .Env
     renomear .env.exeample para .env
     configurar banco conforme exemplo:
@@ -27,6 +24,9 @@ Configure o arquivo .Env
         DB_DATABASE=notasfiscais
         DB_USERNAME=root
         DB_PASSWORD=
+
+Gere uma chave de aplicação:
+    php artisan key:generate
 
 Ligar Apache e MySql
     Abrir Xampp (caso esteja usando Xampp) e clicar em start
